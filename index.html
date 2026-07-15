@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Midterm Project - Top 5 Favorite Anime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ตั้งค่าพื้นฐานและโทนสี */
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #FFFDF0; /* สีพื้นหลังครีมเหลืองอ่อน */
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        .container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* 1. ส่วนบัตรโปรไฟล์ (Profile Card) */
+        .profile-card {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            margin: 0 0 8px 0;
+            color: #C69752; /* สีน้ำตาลทอง */
+            font-size: 24px;
+        }
+
+        .profile-info p {
+            margin: 4px 0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* 2. หัวข้อ "My Top 5 Favorite Anime" */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #C69752;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 22px;
+            background-color: #F7D070;
+            border-radius: 3px;
+        }
+
+        /* 3. ส่วน Grid การ์ดอนิเมะ */
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* เรียง 5 คอลัมน์ */
+            gap: 15px;
+        }
+
+        /* การ์ดอนิเมะแต่ละช่อง */
+        .anime-card {
+            background-color: #FFFFFF;
+            border-radius: 18px;
+            padding: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ป้ายตัวเลขมุมซ้ายบน (#1, #2, #3, ...) */
+        .badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background-color: #F7D070;
+            color: #333;
+            font-weight: bold;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .anime-img {
+            width: 100%;
+            aspect-ratio: 2 / 3; /* อัตราส่วนภาพโปสเตอร์แนวตั้ง */
+            border-radius: 12px;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+
+        .anime-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 4px 0;
+            line-height: 1.4;
+            /* ตัดคำถ้าชื่อยาวเกินไป */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .anime-desc {
+            font-size: 11px;
+            color: #999;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; /* ใส่จุด ... ท้ายข้อความที่ล้น */
+        }
+
+        /* รองรับหน้าจอแท็บเล็ตและมือถือ (Responsive) */
+        @media (max-width: 900px) {
+            .anime-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .profile-card { flex-direction: column; text-align: center; }
+            .anime-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- ส่วนประวัติส่วนตัว -->
+        <div class="profile-card">
+            <!-- เปลี่ยนลิงก์ภาพแมวตรงนี้ -->
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=300" alt="Profile Image" class="profile-img">
+            <div class="profile-info">
+                <h1>บุษราภรณ์ ทัพธานี</h1>
+                <p><strong>ชื่อเล่น:</strong> กิ่ง</p>
+                <p>ยินดีต้อนรับเข้าสู่เว็บไซต์ที่เอาไว้ให้พวกผมทำข้อสอบกลางภาค เพื่อ 20 คะแนน จงท่อง 3 ม. มด มา มิตร</p>
+            </div>
+        </div>
+
+        <!-- หัวข้อหลัก -->
+        <div class="section-title">
+            🎬 My Top 5 Favorite Anime
+        </div>
+
+        <!-- ส่วนของรายการอนิเมะ 5 เรื่อง -->
+        <div class="anime-grid">
+            
+            <!-- เรื่องที่ 1 -->
+            <div class="anime-card">
+                <span class="badge">#1</span>
+                <!-- ใส่ลิงก์รูปภาพของเรื่องที่ 1 ใน src -->
+                <img src="https://m.media-amazon.com/images/M/MV5BMjYwOTg1NDAtY2VjYi00MWU2LWJiOTYtZjEwMGRjOTU2N2EyXkEyXkFqcGc@._V1_.jpg" alt="The Apothecary Diaries" class="anime-img">
+                <h2 class="anime-title">The Apothecary Diaries</h2>
+                <p class="anime-desc">เรื่องนี้คือที่สุดในใจเพราะ...</p>
+            </div>
+
+            <!-- เรื่องที่ 2 -->
+            <div class="anime-card">
+                <span class="badge">#2</span>
+                <img src="https://m.media-amazon.com/images/M/MV5BMmEwYTg4OTItNTA3MS00YWUwLTg3ODEtY2I1MDFlYmU3YzNmXkEyXkFqcGc@._V1_.jpg" alt="Kaiju No.8" class="anime-img">
+                <h2 class="anime-title">Kaiju No.8</h2>
+                <p class="anime-desc">เรื่องนี้คือที่สุดในใจเพราะ...</p>
+            </div>
+
+            <!-- เรื่องที่ 3 -->
+            <div class="anime-card">
+                <span class="badge">#3</span>
+                <img src="https://m.media-amazon.com/images/M/MV5BMGU5YmQ2YmYtYTUyYy00MGMwLTg1NzAtYzg0YWEyN2ZlYmM2XkEyXkFqcGc@._V1_.jpg" alt="Alya Sometimes Hides Her Feelings In Russian" class="anime-img">
+                <h2 class="anime-title">Alya Sometimes Hides Her Feelings In Russian</h2>
+                <p class="anime-desc">เรื่องนี้คือที่สุดในใจเพราะ...</p>
+            </div>
+
+            <!-- เรื่องที่ 4 -->
+            <div class="anime-card">
+                <span class="badge">#4</span>
+                <img src="https://m.media-amazon.com/images/M/MV5BNDQ5NDhiNTUtYzFlYy00MTFiLTk4NWUtMzk3YTkzMmZlM2ZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Kamisama Hajimemashita" class="anime-img">
+                <h2 class="anime-title">kamisama hajimemashita</h2>
+                <p class="anime-desc">เรื่องนี้คือที่สุดในใจ...</p>
+            </div>
+
+            <!-- เรื่องที่ 5 -->
+            <div class="anime-card">
+                <span class="badge">#5</span>
+                <img src="https://m.media-amazon.com/images/M/MV5BMDM5MGU2ODQtOThjMi00NWI5LWI2YTAtMmFjN2Y2YmE0YzUxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Yamada-kun to Lv999 no Koi wo Suru" class="anime-img">
+                <h2 class="anime-title">Yamada-kun to Lv999 no Koi wo Suru</h2>
+                <p class="anime-desc">เรื่องนี้คือที่สุดในใจเพราะ...</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
