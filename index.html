@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Midterm Project - Top 5 Favorite Anime</title>
+    <title>My Midterm Project - Favorite Anime & Songs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@
             line-height: 1.6;
         }
 
-        /* หัวข้อ */
+        /* หัวข้อหลัก */
         .section-title {
             font-size: 20px;
             font-weight: 700;
@@ -64,6 +64,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
 
@@ -81,6 +82,7 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 15px;
+            margin-bottom: 50px;
         }
 
         .anime-card {
@@ -135,8 +137,62 @@
             text-overflow: ellipsis;
         }
 
+        /* โครงสร้างส่วนของลิสต์รายการเพลง (เรียงแถวตอนลึกตามภาพ) */
+        .songs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .song-card {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            position: relative;
+        }
+
+        .song-media {
+            width: 450px;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            border: none;
+            object-fit: cover;
+        }
+
+        .song-info {
+            flex: 1;
+        }
+
+        .song-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+
+        .song-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #FFFDF0;
+            border: 1px solid #F7D070;
+            color: #C69752;
+            font-weight: bold;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+
+        /* Responsive */
         @media (max-width: 900px) {
             .anime-grid { grid-template-columns: repeat(3, 1fr); }
+            .song-card { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .song-media { width: 100%; }
+            .song-badge { top: auto; bottom: 20px; right: 20px; }
         }
         @media (max-width: 600px) {
             .profile-card { flex-direction: column; text-align: center; }
@@ -150,7 +206,6 @@
         
         <!-- ส่วนประวัติส่วนตัว -->
         <div class="profile-card">
-            <!-- 🔗 ใช้ไฟล์ images.jpg เป็นรูปโปรไฟล์หลัก -->
             <img src="images.jpg" alt="Profile Image" class="profile-img">
             <div class="profile-info">
                 <h1>อนุสรณ์ น้ำรักษ์</h1>
@@ -159,13 +214,12 @@
             </div>
         </div>
 
-        <!-- หัวข้อหลัก -->
+        <!-- ================= หัวข้อหลัก: อนิเมะ ================= -->
         <div class="section-title">
             🎬 My Top 5 Favorite Anime
         </div>
 
         <div class="anime-grid">
-            
             <!-- เรื่องที่ 1 -->
             <div class="anime-card">
                 <span class="badge">#1</span>
@@ -177,7 +231,6 @@
             <!-- เรื่องที่ 2 -->
             <div class="anime-card">
                 <span class="badge">#2</span>
-                <!-- 🔗 เปลี่ยนมาใช้ไฟล์ miim.png ที่อยู่บนหน้าแรกของ GitHub แล้ว -->
                 <img src="miim.png" alt="Anime 2" class="anime-img">
                 <h2 class="anime-title">Kaiju No.8</h2>
                 <p class="anime-desc">เรื่องนี้คือที่สุดในใจเพราะ...</p>
@@ -186,7 +239,6 @@
             <!-- เรื่องที่ 3 -->
             <div class="anime-card">
                 <span class="badge">#3</span>
-                <!-- 🔗 เปลี่ยนมาใช้ไฟล์ DVSE.jpg ตามที่ระบุ (ตรวจสอบการสะกดชื่อไฟล์ให้ตรงกับที่อัปโหลดจริงด้วยนะครับ) -->
                 <img src="DVSE.jpg" alt="Anime 3" class="anime-img">
                 <h2 class="anime-title">Alya Sometimes Hides Her Feelings In Russian</h2>
                 <p class="anime-desc">เรื่องนี้คือที่สุดในใจเพราะ...</p>
@@ -195,7 +247,6 @@
             <!-- เรื่องที่ 4 -->
             <div class="anime-card">
                 <span class="badge">#4</span>
-                <!-- ลิงก์รูปภาพสำรองชั่วคราว หากต้องการเปลี่ยนเป็นไฟล์ในเครื่อง สามารถแก้เป็นชื่อไฟล์ได้เลยครับ -->
                 <img src="https://m.media-amazon.com/images/M/MV5BNDQ5NDhiNTUtYzFlYy00MTFiLTk4NWUtMzk3YTkzMmZlM2ZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Kamisama Hajimemashita" class="anime-img">
                 <h2 class="anime-title">kamisama hajimemashita</h2>
                 <p class="anime-desc">เรื่องนี้คือที่สุดในใจ...</p>
@@ -208,7 +259,59 @@
                 <h2 class="anime-title">Yamada-kun to Lv999 no Koi wo Suru</h2>
                 <p class="anime-desc">เรื่องนี้คือที่สุดในใจเพราะ...</p>
             </div>
+        </div>
 
+        <!-- ================= หัวข้อหลัก: เพลงที่ชอบ (เพิ่มใหม่) ================= -->
+        <div class="section-title">
+            🎵 My Top 5 Favorite Songs
+        </div>
+
+        <div class="songs-list">
+            <!-- เพลงที่ 1 -->
+            <div class="song-card">
+                <span class="song-badge">#1</span>
+                <!-- 💡 ใส่ลิงก์วิดีโอ YouTube ของคุณในช่อง src ด้านล่างนี้ได้เลยครับ -->
+                <iframe class="song-media" src="https://www.youtube.com/embed/ดาวน์โหลดลิงก์ที่นี่" title="YouTube video player" allowfullscreen></iframe>
+                <div class="song-info">
+                    <h3 class="song-title">BOWKYLION - วาดไว้ (recall) [Official MV]</h3>
+                </div>
+            </div>
+
+            <!-- เพลงที่ 2 -->
+            <div class="song-card">
+                <span class="song-badge">#2</span>
+                <iframe class="song-media" src="https://www.youtube.com/embed/ดาวน์โหลดลิงก์ที่นี่" title="YouTube video player" allowfullscreen></iframe>
+                <div class="song-info">
+                    <h3 class="song-title">คุณหลอกดาวสลัว (Wake up please) - TEMI Feat. KIRANA</h3>
+                </div>
+            </div>
+
+            <!-- เพลงที่ 3 -->
+            <div class="song-card">
+                <span class="song-badge">#3</span>
+                <iframe class="song-media" src="https://www.youtube.com/embed/ดาวน์โหลดลิงก์ที่นี่" title="YouTube video player" allowfullscreen></iframe>
+                <div class="song-info">
+                    <h3 class="song-title">ILLIT (아일릿) 'NOT CUTE ANYMORE' Official MV</h3>
+                </div>
+            </div>
+
+            <!-- เพลงที่ 4 -->
+            <div class="song-card">
+                <span class="song-badge">#4</span>
+                <iframe class="song-media" src="https://www.youtube.com/embed/ดาวน์โหลดลิงก์ที่นี่" title="YouTube video player" allowfullscreen></iframe>
+                <div class="song-info">
+                    <h3 class="song-title">TWICE "THIS IS FOR"</h3>
+                </div>
+            </div>
+
+            <!-- เพลงที่ 5 -->
+            <div class="song-card">
+                <span class="song-badge">#5</span>
+                <iframe class="song-media" src="https://www.youtube.com/embed/ดาวน์โหลดลิงก์ที่นี่" title="YouTube video player" allowfullscreen></iframe>
+                <div class="song-info">
+                    <h3 class="song-title">aespa 에스파 'Dirty Work'</h3>
+                </div>
+            </div>
         </div>
 
     </div>
