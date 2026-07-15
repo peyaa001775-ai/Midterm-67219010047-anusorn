@@ -135,7 +135,6 @@
             text-overflow: ellipsis;
         }
 
-        /* Responsive สำหรับมือถือ/แท็บเล็ต */
         @media (max-width: 900px) {
             .anime-grid { grid-template-columns: repeat(3, 1fr); }
         }
@@ -151,8 +150,8 @@
         
         <!-- ส่วนประวัติส่วนตัว -->
         <div class="profile-card">
-            <!-- ⚠️ ตรงนี้ถ้ามีรูปแมวในเครื่อง ชื่อว่าอะไร ให้นำมาใส่แทน images/profile.jpg ได้เลยครับ เช่น src="cat.jpg" -->
-            <img src="images/profile.jpg" alt="Profile Image" class="profile-img">
+            <!-- 🔗 แก้เป็น images.jpg ให้ตรงกับไฟล์บน GitHub แล้ว -->
+            <img src="images.jpg" alt="Profile Image" class="profile-img">
             <div class="profile-info">
                 <h1>อนุสรณ์ น้ำรักษ์</h1>
                 <p><strong>ชื่อเล่น:</strong> พีพี</p>
@@ -165,13 +164,13 @@
             🎬 My Top 5 Favorite Anime
         </div>
 
-        <!-- รายการอนิเมะ 5 เรื่อง (ใช้ URL ตรง รูปไม่แตกแน่นอน) -->
         <div class="anime-grid">
             
             <!-- เรื่องที่ 1 -->
             <div class="anime-card">
                 <span class="badge">#1</span>
-                <img src="https://m.media-amazon.com/images/M/Food Wars.jpg" alt="Food Wars" class="anime-img">
+                <!-- 🔗 แก้ให้ดึงไฟล์ Food Wars.jpg ที่อยู่หน้าแรกของ GitHub โดยตรง -->
+                <img src="Food Wars.jpg" alt="Food Wars" class="anime-img">
                 <h2 class="anime-title">Food Wars</h2>
                 <p class="anime-desc">เรื่องนี้คือที่สุดในใจเพราะ...</p>
             </div>
@@ -203,7 +202,8 @@
             <!-- เรื่องที่ 5 -->
             <div class="anime-card">
                 <span class="badge">#5</span>
-                <img src="assts/QOI.jpg">
+                <!-- 🔗 ลบโฟลเดอร์สมมติออก ให้ดึง QOI.jpg จากหน้าแรกตรง ๆ -->
+                <img src="QOI.jpg" alt="Yamada-kun to Lv999" class="anime-img">
                 <h2 class="anime-title">Yamada-kun to Lv999 no Koi wo Suru</h2>
                 <p class="anime-desc">เรื่องนี้คือที่สุดในใจเพราะ...</p>
             </div>
